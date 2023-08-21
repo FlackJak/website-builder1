@@ -3,6 +3,15 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
 
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
+    const imageInput = document.getElementById("image");
+
+    let imageHTML = '';
+    if (imageInput.files.length > 0) {
+        const image = imageInput.files[0];
+        const imageURL = URL.createObjectURL(image);
+        console.log("Image URL:", imageURL); // Debug statement
+        imageHTML = `<img src="${imageURL}" alt="Uploaded Image" style="max-width: 40%;">`;
+    }
 
     const generatedHTML = `
         <!DOCTYPE html>
@@ -18,6 +27,7 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
             </header>
             <main>
                 ${content}
+                ${imageHTML}
             </main>
         </body>
         </html>

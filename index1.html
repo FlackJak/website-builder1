@@ -8,19 +8,25 @@
 </head>
 <body>
     <div class="container">
-        <h1>Website Generator</h1>
-        <form id="userForm">
-            <label for="title">Website Title:</label>
-            <input type="text" id="title" name="title" required>
-           <div> 
-            <label for="content">Website Content:</label></div>
-            <textarea id="content" name="content" rows="8" required></textarea>
-           <div> <label for="content"> Photos </label></div>
-            <input type="file"> 
-            
-           <div style="padding: 20px;"> <button type="submit">Generate Website</button></div>
-        </form>
+        <header>
+            <h1>Website Generator</h1>
+        </header>
+        <main>
+            <form id="userForm">
+                <label for="title">Website Title:</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="content">Website Content:</label>
+                <textarea id="content" name="content" rows="8" required></textarea>
+                <label for="image" class="upload-label">Upload Image:</label> 
+                <input type="file" id="image" class="file-input">
+                
+                
+                <button type="submit">Generate Website</button>
+            </form>
+        </main>
     </div>
     <script src="script1.js"></script>
 </body>
 </html>
+
