@@ -1,67 +1,31 @@
-body {
-    font-family: 'Helvetica', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
+.container{
+    position:relative;
 }
-
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-header {
-    text-align: center;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-h1 {
-    font-size: 32px;
-    color: #333;
-    margin: 0;
-    padding: 10px;
-}
-
-main {
-    padding: 20px;
-}
-
-form {
-    display: grid;
-    gap: 20px;
-}
-
-label {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-input[type="text"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f8f8;
-    font-size: 16px;
-}
-
-button {
-    padding: 12px 24px;
-    background-color: #007bff;
+.container_input{
+    front: inherit;
     color: #fff;
+    padding: 10px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 4px;
+    outline: 2px solid #fff;
+    background-color: transparent;
+    transition: outline-color 500ms;
 }
-
-button:hover {
-    background-color: #0056b3;
+.container_input:is(:focus,:valid){
+    outline-color: #3c50eb;
+}
+.container_label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    translate: 10px 10px;
+    color: #fff;
+    transition: translate 500ms,scale 500ms;
+}
+.container_input:focus +.container_label,
+.container_input:valid +.container_label{
+    padding-inline: 5px;
+    translate: 10px -14px;
+    scale: 0.8;
+    background-color: #000;
 }
